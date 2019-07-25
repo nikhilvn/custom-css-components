@@ -1,0 +1,72 @@
+* {
+  box-sizing: content-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  height: 500px;
+  margin: auto;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+select[name="normal-select"] {
+  display: none;
+}
+
+.custom-select {
+  position: relative;
+  width: 130px;
+}
+
+.selected {
+  padding: 5px 10px;
+  border: 1px solid teal;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.custom-dropdown {
+  margin: 0;
+  padding: 0;
+  border: 1px solid teal;
+  border-radius: 3px;
+  border-top-width: 0;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  right: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.custom-select .selected.open ~ .custom-dropdown {
+  opacity: 1;
+  left: 0;
+  right: 0;
+  visibility: visible;
+  transition: opacity 0.5s ease;
+}
+
+.custom-option {
+  list-style-type: none;
+  padding: 5px 10px;
+  border-bottom: 1px solid #a8d0d0;
+  cursor: pointer;
+}
+
+.custom-option:hover {
+  background-color: #a8d0d0;
+}
+
+.custom-option:last-child {
+  border-bottom: none;
+}
